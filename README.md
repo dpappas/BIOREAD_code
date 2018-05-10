@@ -1,2 +1,2 @@
 # BIOREAD_code
-An implementaion of ASReader and AOAReader that we applied on BIOREAD dataset
+An implementaion of ASReader and AOAReader models (in Pytorch) that we applied on BIOREAD dataset
