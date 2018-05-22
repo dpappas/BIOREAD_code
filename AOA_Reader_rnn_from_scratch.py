@@ -51,9 +51,6 @@ hdlr.setFormatter(formatter)
 logger.addHandler(hdlr)
 logger.setLevel(logging.INFO)
 
-# sudo /etc/init.d/mdm stop
-# CUDA_VISIBLE_DEVICES=1 python sorted_nonum_bioread_pytorch_aoareader_lr00001.py
-
 def data_yielder(data_path, how_many):
     files = [ data_path+f for f in os.listdir(data_path) ]
     random.shuffle(files)
