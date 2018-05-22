@@ -221,24 +221,24 @@ class ASReader_Modeler(nn.Module):
             if(cand.data[0] == 0):
                 pass
             else:
-                mask        = torch.eq(context, cand)
+                mask            = torch.eq(context, cand)
                 if (use_cuda):
                     mask        = mask.type(torch.cuda.FloatTensor)
-                    mask = mask.detach()
+                    mask        = mask.detach()
                     masked_soft = torch.mul(input.type(torch.cuda.FloatTensor), mask)
                 else:
                     mask        = mask.type(torch.FloatTensor)
-                    mask = mask.detach()
+                    mask        = mask.detach()
                     masked_soft = torch.mul(input.type(torch.FloatTensor), mask)
                 #
-                mask        = torch.eq(candidates, cand)
+                mask            = torch.eq(candidates, cand)
                 if (use_cuda):
                     mask        = mask.type(torch.cuda.FloatTensor)
-                    mask = mask.detach()
+                    mask        = mask.detach()
                 else:
                     mask        = mask.type(torch.FloatTensor)
-                    mask = mask.detach()
-                masked_cand = torch.mul(mask, torch.sum(masked_soft))
+                    mask        = mask.detach()
+                masked_cand     = torch.mul(mask, torch.sum(masked_soft))
                 #
                 if(ret is None):
                     ret = masked_cand
