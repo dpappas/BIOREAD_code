@@ -386,9 +386,6 @@ print_params()
 if(use_cuda):
     model.cuda(gpu_device)
 
-# dummy_test()
-# exit()
-
 min_mean_valid_c = 9000000
 sum_cost, sum_acc, m_batches = 0., 0., 0
 for epoch in range(start_epoch,20):
