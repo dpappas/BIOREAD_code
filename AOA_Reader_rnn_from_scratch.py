@@ -25,8 +25,7 @@ use_cuda = torch.cuda.is_available()
 if(use_cuda):
     torch.cuda.manual_seed(1989)
 
-
-od              = 'bioread_with_pn_aoareader'
+od              = 'bioread_with_pn_aoareader_rnn_from_scratch'
 odir            = './bioread_pn_output/{}/'.format(od)
 if not os.path.exists(odir):
     os.makedirs(odir)
@@ -375,7 +374,6 @@ model           = AOAReader_Modeler(vocab_size, embedding_dim, hidden_dim)
 optimizer       = optim.Adam(model.parameters(), lr=learning_rate)
 
 if(use_cuda):
-    # model = torch.nn.DataParallel(model).cuda()
     model.cuda(gpu_device)
 
 if resume_from is not None:
@@ -405,4 +403,7 @@ for epoch in range(start_epoch,20):
         'best_cost'     : min_mean_valid_c,
         'optimizer'     : optimizer.state_dict(),
     }
-    save_checkpoint(state, filename=odir+'checkpoint_epoch_{}.pth.tar'.format(epoch+1))
+    save_checkpoint(state, filename=odir+'best_checkpoint.pth.tar')
+
+
+
