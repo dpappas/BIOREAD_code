@@ -397,13 +397,13 @@ for epoch in range(start_epoch,20):
     if(mean_valid_c < min_mean_valid_c):
         min_mean_valid_c = mean_valid_c
         test_one_epoch(epoch)
-    state = {
-        'epoch'         : epoch + 1,
-        'state_dict'    : model.state_dict(),
-        'best_cost'     : min_mean_valid_c,
-        'optimizer'     : optimizer.state_dict(),
-    }
-    save_checkpoint(state, filename=odir+'best_checkpoint.pth.tar')
+        state = {
+            'epoch'         : epoch + 1,
+            'state_dict'    : model.state_dict(),
+            'best_cost'     : min_mean_valid_c,
+            'optimizer'     : optimizer.state_dict(),
+        }
+        save_checkpoint(state, filename=odir+'best_checkpoint.pth.tar')
 
 
 
