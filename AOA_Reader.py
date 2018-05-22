@@ -23,11 +23,11 @@ embedding_dim   = 300
 hidden_dim      = 192
 learning_rate   = 0.0001
 gpu_device      = 0
-train_data_path = '/media/dpappas/dpappas_data/bioread_subcorpus_batches_nonum_sorted/train/'
-valid_data_path = '/media/dpappas/dpappas_data/bioread_subcorpus_batches_nonum_sorted/valid/'
-test_data_path  = '/media/dpappas/dpappas_data/bioread_subcorpus_batches_nonum_sorted/test/'
-od      = 'bioread_with_pn_aoareader_for_github'
-odir    = '/media/dpappas/dpappas/bioread_pn/{}/'.format(od)
+train_data_path = './data/bioread_subcorpus_batches_nonum_sorted/train/'
+valid_data_path = './data/bioread_subcorpus_batches_nonum_sorted/valid/'
+test_data_path  = './data/bioread_subcorpus_batches_nonum_sorted/test/'
+od              = 'bioread_with_pn_aoareader'
+odir            = './bioread_pn_output/{}/'.format(od)
 if not os.path.exists(odir):
     os.makedirs(odir)
 
